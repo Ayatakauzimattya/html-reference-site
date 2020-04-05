@@ -21,16 +21,8 @@ jobs:
           node-version: "10.x"
         if: github.event.pull_request.merged == true
 
-      - name: Setup Hexo
-        run: npm install hexo --save
-        if: github.event.pull_request.merged == true
-
-      - name: Setup Netlify Cli
-        run: npm install netlify-cli --save
-        if: github.event.pull_request.merged == true
-
-      - name: Build
-        run: npx hexo generate
+      - name: Setup Library
+        run: npm ci
         if: github.event.pull_request.merged == true
 
       - name: Build
